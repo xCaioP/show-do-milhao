@@ -1,45 +1,55 @@
 import functions
 
+saldoJogador = 0
+
 functions.introducao()
 
-saldoJogador = 0
+print("\nUm resumo sobre o jogo : \n")
+print("O jogo consiste em três rodadas e uma pergunta final: ")     
+print("* A primeira contém 5 perguntas, cada uma valendo mil reais cumulativos. ")
+print("* A segunda, de 5 perguntas valendo R$ 10 mil cumulativos cada. ")
+print("* A terceira, de 5 perguntas de R$100 mil reais cumulativos cada. ")
+print("* A última pergunta valea R$ 1 milhão.", "\n")
+nome_jogador = input("Digite seu nome para começar: ")
+functions.limpar_tela()
 
 for indice, dado in enumerate(functions.dados):
     if indice != 0:
-        functions.mostrarValorParar(saldoJogador)
-        functions.mostrarValorProximaPergunta(dado["valorAcertar"])
-        desejaContinuar = input("\nDeseja continuar? [S/N]")
-        functions.limparTela()
+        functions.mostrar_valor_parar(saldoJogador)
+        functions.mostrar_valor_proxima_pergunta(dado["valor_acertar"])
+        desejaContinuar = input("\nDeseja continuar? [S/N] ")
+        functions.limpar_tela()
     else:
         desejaContinuar = "S"
 
     if desejaContinuar.upper() == "S":
-        functions.colocarLinha()
-        functions.mostrarValorPergunta(dado["valorAcertar"])
-        functions.colocarLinha()
+        functions.colocar_linha()
+        functions.mostrar_valor_pergunta(dado["valor_acertar"]) 
+        functions.colocar_linha()
         print(dado["pergunta"], "\n")
         for opcao in dado["opcoes"]:
             print(opcao)
-        respostaJogador = input("\nEscolha uma opção [A,B,C,D]: ")
+        respostaJogador = input("\nEscolha uma opção [1,2,3,4]: ")
         if respostaJogador.upper() == dado["resposta"]:
-            print("\nReposta correta!")
-            saldoJogador = dado["valorAcertar"]
+            print("\nCerta Reposta!!!", "\n")
+            saldoJogador = dado["valor_acertar"]
         else:
             if "valorErrar" not in dado:
                 saldoJogador = 0
             else:
-                saldoJogador = dado["valorErrar"]
+                saldoJogador = addo["valor_errar"]
 
-            print("\nReposta errada")
-            print("O jogo acabou")
-            functions.mostrarValorAoTerminarJogo(saldoJogador)
+            print("\nQue pena! Você errou!")
+            print("O jogo acabou, ", nome_jogador)
+            functions.mostrar_valor_ao_terminar_jogo(saldoJogador)
             break
     else:
         print("Jogo finalizado")
-        functions.mostrarValorAoTerminarJogo(dado["valorParar"])
+        functions.mostrar_valor_ao_terminar_jogo(dado["valor_parar"])
 
         break
     
 if saldoJogador == 1000000:
     print("Você venceu o jogo!")
-    print("Você é novo m")
+    print("VOCÊ GANHOU 1 MILHÃO DE REAIS")
+    print("Parabéns ", nome_jogador, "você conseguiu prêmio máximo!!!")
