@@ -36,9 +36,11 @@ for indice, dado in enumerate(functions.dados):
         
         resposta_jogador = 0    
 
-        while(resposta_jogador != 1 and resposta_jogador != 2 and resposta_jogador != 3 and resposta_jogador != 4):
-            resposta_jogador = int(input("\nEscolha uma opção [1,2,3,4]: "))
-        
+        while(resposta_jogador != "1" and resposta_jogador != "2" and resposta_jogador != "3" and resposta_jogador != "4"):
+            resposta_jogador = input("\nEscolha uma opção [1,2,3,4]: ")
+
+        resposta_jogador = int(resposta_jogador)
+
         if resposta_jogador == dado["resposta"]:
             print("\n\033[32mCerta Reposta!!! \033[0;0m\n")
             saldo_jogador = dado["valor_acertar"]
@@ -49,7 +51,7 @@ for indice, dado in enumerate(functions.dados):
                 saldo_jogador = dado["valor_errar"]
 
             print("\n\033[31mQue pena! Você errou!\033[0;0m")
-            print("O jogo acabou, ", functions.nome_jogador)
+            print("O jogo acabou,", functions.nome_jogador)
             functions.mostrar_valor_ao_terminar_jogo(saldo_jogador)
             
             break
