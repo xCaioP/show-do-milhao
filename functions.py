@@ -4,7 +4,7 @@ import os
 def limpar_tela():
     """
     Essa função limpa a tela no cmd, usando o módulo os.
-    return: None
+    :return: None
     """
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -12,7 +12,8 @@ def limpar_tela():
 def colocar_linha(quantidade=40):
     """
     Essa função adiciona hífens para ter uma aparência melhor via CMD.
-    return: None
+    :param quantidade: int
+    :return: None
     """
     print("-" * quantidade)
 
@@ -21,7 +22,7 @@ def introducao():
     """
     Essa função cria a Tela inicial do jogo,
     dando uma breve descrição e interagindo com o jogador.
-    return: None
+    :return: None
     """
     colocar_linha()
     print("\nBaseado na primeira versão", "\n")
@@ -40,8 +41,8 @@ def introducao():
 def mostrar_valor_proxima_pergunta(valor_acertar):
     """
     Essa função serve para mostrar o valor da proxima pergunta.
-    param: valor_acertar: double
-    return: None
+    :param: valor_acertar: double
+    :return: None
     """
     print("Proxima pergunta valerá:", valor_acertar, "reais", "\n")
     colocar_linha()
@@ -50,8 +51,8 @@ def mostrar_valor_proxima_pergunta(valor_acertar):
 def mostrar_valor_parar(valor_parar):
     """
     Essa função serve para mostrar o valor caso o jogador queira parar, e a cada pergunta esse valor muda ou altera.
-    param: valor_parar: double
-    return: None
+    :param: valor_parar: double
+    :return: None
     """
     colocar_linha()
     print("\nParar: ", valor_parar, "reais")
@@ -59,23 +60,28 @@ def mostrar_valor_parar(valor_parar):
 
 def mostrar_valor_pergunta(valor_acertar):
     """
-    Essa função mostra ao usuário o valor da pergunta atual.
-    param: valor_acertar: double
-    return: None
+    Essa função mostra ao jogador o valor da pergunta atual.
+    :param: valor_acertar: double
+    :return: None
     """
     print("Essa pergunta vale: ", valor_acertar, "reais")
 
 
 def mostrar_valor_ao_terminar_jogo(valor_final):
     """
-    Essa função mostra o valor final recebido pelo usuário.
-    param: valor_final: double
-    return: None
+    Essa função mostra o valor final recebido pelo jogador.
+    :param: valor_final: double
+    :return: None
     """
     print("Você recebeu:", valor_final, "reais")
 
-def segunda_tela():
-    print("\nUm resumo sobre o jogo : \n")
+
+def explicacao():
+    """
+    Essa função explica como o jogo funciona.
+    :return:None
+    """
+    print("\nUm resumo sobre o jogo: \n")
     print("O jogo consiste em três rodadas e uma pergunta final: ")     
     print("* A primeira contém 5 perguntas, cada uma valendo mil reais cumulativos. ")
     print("* A segunda, de 5 perguntas valendo R$ 10 mil cumulativos cada. ")
@@ -86,8 +92,17 @@ def segunda_tela():
     limpar_tela()
 
 
+def contador_perguntas(numero_pergunta):
+    """
+    Essa função mostra a contagem de perguntas para o jogador.
+    :param: numero_pergunta: double
+    :return: None
+    """
+    print("Pergunta: ", numero_pergunta, "/", len(dados), "\n")
+
+
 dados = (
-    {"pergunta": "Primeira pergunta: \nQue personagem do folclore brasileiro tem uma perna só? ",
+    {"pergunta": "Que personagem do folclore brasileiro tem uma perna só? ",
      "opcoes": ("1) Cuca ", "2) Curupira", "3) Boitatá", "4) Saci-pererê"), "resposta": 4, "valor_acertar": 1000},
 
     {"pergunta": "Qual animal da fauna brasileira está retratado na nota de dez reais?",

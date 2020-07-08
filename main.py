@@ -4,13 +4,12 @@ Desenvolvido por Caio Ponte
 
 """
 
-
 import functions
 
 saldo_jogador = 0
 
 functions.introducao()
-functions.segunda_tela()
+functions.explicacao()
 
 for indice, dado in enumerate(functions.dados):
     if indice != 0:
@@ -29,6 +28,7 @@ for indice, dado in enumerate(functions.dados):
         functions.colocar_linha()
         functions.mostrar_valor_pergunta(dado["valor_acertar"]) 
         functions.colocar_linha()
+        functions.contador_perguntas(indice + 1)
         print(dado["pergunta"], "\n")
         
         for opcao in dado["opcoes"]:
@@ -40,7 +40,7 @@ for indice, dado in enumerate(functions.dados):
             resposta_jogador = int(input("\nEscolha uma opção [1,2,3,4]: "))
         
         if resposta_jogador == dado["resposta"]:
-            print("\nCerta Reposta!!!", "\n")
+            print("\n\033[32mCerta Reposta!!! \033[0;0m\n")
             saldo_jogador = dado["valor_acertar"]
         else:
             if "valor_errar" not in dado:
@@ -48,7 +48,7 @@ for indice, dado in enumerate(functions.dados):
             else:
                 saldo_jogador = dado["valor_errar"]
 
-            print("\nQue pena! Você errou!")
+            print("\n\033[31mQue pena! Você errou!\033[0;0m")
             print("O jogo acabou, ", functions.nome_jogador)
             functions.mostrar_valor_ao_terminar_jogo(saldo_jogador)
             
@@ -60,6 +60,8 @@ for indice, dado in enumerate(functions.dados):
         break
     
 if saldo_jogador == 1000000:
+    print("\033[1;93m**********************************************************************")
     print("Você venceu o jogo!")
     print("VOCÊ GANHOU 1 MILHÃO DE REAIS")
-    print("Parabéns ", functions.nome_jogador, "você conseguiu prêmio máximo!!!")
+    print("Parabéns,",functions.nome_jogador, "você conseguiu prêmio máximo!!!")
+    print("**********************************************************************")
