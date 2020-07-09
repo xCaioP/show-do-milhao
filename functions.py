@@ -86,7 +86,7 @@ def explicacao():
     print("* A primeira contém 5 perguntas, cada uma valendo mil reais cumulativos. ")
     print("* A segunda, de 5 perguntas valendo R$ 10 mil cumulativos cada. ")
     print("* A terceira, de 5 perguntas de R$100 mil reais cumulativos cada. ")
-    print("* A última pergunta valea R$ 1 milhão.", "\n")
+    print("* A última pergunta vale R$ 1 milhão.", "\n")
     global nome_jogador 
     nome_jogador = input("Digite seu nome para começar: ")
     limpar_tela()

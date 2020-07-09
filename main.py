@@ -42,6 +42,7 @@ for indice, dado in enumerate(functions.dados):
         resposta_jogador = int(resposta_jogador)
 
         if resposta_jogador == dado["resposta"]:
+            functions.colocar_linha()
             print("\n\033[32mCerta Reposta!!! \033[0;0m\n")
             saldo_jogador = dado["valor_acertar"]
         else:
