@@ -4,33 +4,29 @@ import os
 def limpar_tela():
     """
     Essa função limpa a tela no cmd, usando o módulo os.
-    :return: None
+
     """
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def colocar_linha(quantidade=40):
+def colocar_linha():
     """
     Essa função adiciona hífens para ter uma aparência melhor via CMD.
-    :param quantidade: int
-    :return: None
+
     """
-    print("-" * quantidade)
+    print("-" * 40)
 
 
 def introducao():
     """
-    Essa função cria a Tela inicial do jogo,
-    dando uma breve descrição e interagindo com o jogador.
-    :return: None
+    Essa função cria a Tela inicial do jogo, dando uma breve descrição e interagindo com o jogador.
+
     """
     colocar_linha()
-    print("\nBaseado na primeira versão", "\n")
-    colocar_linha()
     print("\nShow do Milhão")
-    print("Sejam muito bem-vindos!", "\n")
+    print("Seja bem-vindo!", "\n")
     colocar_linha()
-    print("\nPreparados para uma diversão?")
+    print("\nSerá que você consegue ganhar o prêmio máximo de 1 milhão de REAIS??????")
     print("Vamos começar com perguntas bem fáceis e depois vamos dificultar um pouco :)", "\n")
     colocar_linha()
     print("\nEstão preparados? ", "\n")
@@ -41,51 +37,46 @@ def introducao():
 def mostrar_valor_proxima_pergunta(valor_acertar):
     """
     Essa função serve para mostrar o valor da proxima pergunta.
-    :param: valor_acertar: double
-    :return: None
+
     """
-    print("Proxima pergunta valerá:", valor_acertar, "reais", "\n")
+    print('Proxima pergunta valerá: {} reais\n' .format(valor_acertar))
     colocar_linha()
 
 
 def mostrar_valor_parar(valor_parar):
     """
     Essa função serve para mostrar o valor caso o jogador queira parar, e a cada pergunta esse valor muda ou altera.
-    :param: valor_parar: double
-    :return: None
+
     """
     colocar_linha()
-    print("\nParar: ", valor_parar, "reais")
+    print("\nParar: {} reais" .format(valor_parar))
 
 
 def mostrar_valor_pergunta(valor_acertar):
     """
     Essa função mostra ao jogador o valor da pergunta atual.
-    :param: valor_acertar: double
-    :return: None
     """
-    print("Essa pergunta vale: ", valor_acertar, "reais")
+    print("Essa pergunta vale: {} reais ".format(valor_acertar))
 
 
 def mostrar_valor_ao_terminar_jogo(valor_final):
     """
     Essa função mostra o valor final recebido pelo jogador.
-    :param: valor_final: double
-    :return: None
+
     """
-    print("Você recebeu:", valor_final, "reais")
+    print('\nVocê recebeu {} reais \n' .format(valor_final))
 
 
 def explicacao():
     """
     Essa função explica como o jogo funciona.
-    :return:None
+
     """
-    print("\nUm resumo sobre o jogo: \n")
-    print("O jogo consiste em três rodadas e uma pergunta final: ")
-    print("* A primeira contém 5 perguntas, cada uma valendo mil reais cumulativos. ")
-    print("* A segunda, de 5 perguntas valendo R$ 10 mil cumulativos cada. ")
-    print("* A terceira, de 5 perguntas de R$100 mil reais cumulativos cada. ")
+    print("Como funciona o jogo: \n")
+    print("O jogo consiste em três rodadas e uma pergunta final: \n")
+    print("* A primeira rodada contém 5 perguntas, cada uma valendo R$ 1000 cumulativos. ")
+    print("* A segunda rodada contém 5 perguntas valendo R$ 10 mil cumulativos cada. ")
+    print("* A terceira rodada contém de 5 perguntas de R$ 100 mil reais cumulativos cada. ")
     print("* A última pergunta vale R$ 1 milhão.", "\n")
     global nome_jogador
     nome_jogador = input("Digite seu nome para começar: ")
@@ -95,58 +86,57 @@ def explicacao():
 def contador_perguntas(numero_pergunta):
     """
     Essa função mostra a contagem de perguntas para o jogador.
-    :param: numero_pergunta: double
-    :return: None
+
     """
     print("Pergunta: ", numero_pergunta, "/", len(dados), "\n")
 
 
 dados = (
     {"pergunta": "Que personagem do folclore brasileiro tem uma perna só? ",
-     "opcoes": ("1) Cuca ", "2) Curupira", "3) Boitatá", "4) Saci-pererê"), "resposta": 4, "valor_acertar": 1000},
+     "opcoes": ("A) Cuca ", "B) Curupira", "C) Boitatá", "D) Saci-pererê"), "resposta": 'D', "valor_acertar": 1000},
 
     {"pergunta": "Qual animal da fauna brasileira está retratado na nota de dez reais?",
-     "opcoes": ("1) Jabuti", "2) Onça", "3) Arara", "4) Tucano"), "resposta": 3, "valor_acertar": 2000, "valor_parar": 1000, "valor_errar": 500},
+     "opcoes": ("A) Jabuti", "B) Onça", "C) Arara", "D) Tucano"), "resposta": 'C', "valor_acertar": 2000, "valor_parar": 1000, "valor_errar": 500},
 
     {"pergunta": "Qual a matéria-prima do ketchup?",
-     "opcoes": ("1) Abacate", "2) Tomate", "3) Cereja", "4) Pessego"), "resposta": 2, "valor_acertar": 3000, "valor_parar": 2000, "valor_errar": 1000},
+     "opcoes": ("A) Abacate", "B) Tomate", "C) Cereja", "D) Pessego"), "resposta": 'B', "valor_acertar": 3000, "valor_parar": 2000, "valor_errar": 1000},
 
     {"pergunta": "Qual é a maior floresta do planeta? ",
-     "opcoes": ("1) Negra", "2) De Sherwood", "3) Da Tijuca", "4) Amazônica"), "resposta": 4, "valor_acertar": 4000, "valor_parar": 3000, "valor_errar": 1500},
+     "opcoes": ("A) Negra", "B) De Sherwood", "C) Da Tijuca", "D) Amazônica"), "resposta": 'D', "valor_acertar": 4000, "valor_parar": 3000, "valor_errar": 1500},
 
     {"pergunta": "Qual casal foi expulso do Paraíso?",
-     "opcoes": ("1) Sansão e Dalila", "2) José e Maria", "3) Sara e Abraão", "4) Adão e Eva"), "resposta": 4, "valor_acertar": 5000, "valor_parar": 4000, "valor_errar": 2000},
+     "opcoes": ("A) Sansão e Dalila", "B) José e Maria", "C) Sara e Abraão", "D) Adão e Eva"), "resposta": 'D', "valor_acertar": 5000, "valor_parar": 4000, "valor_errar": 2000},
 
     {"pergunta": "Qual é o inseto que transmite a doença de Chagas??",
-     "opcoes": ("1) Abelha", "2) Barata", "3) Barbeiro", "4) Pulga"), "resposta": 3, "valor_acertar": 10000, "valor_parar": 5000, "valor_errar": 2500},
+     "opcoes": ("A) Abelha", "B) Barata", "C) Barbeiro", "D) Pulga"), "resposta": 'C', "valor_acertar": 10000, "valor_parar": 5000, "valor_errar": 2500},
 
     {"pergunta": "Quantos eram os anões da história “A branca de neve”?",
-     "opcoes": ("1) Seis ", "2) Sete", "3) Oito", "4) Nove"), "resposta": 2, "valor_acertar": 20000, "valor_parar": 10000, "valor_errar": 5000},
+     "opcoes": ("A) Seis ", "B) Sete", "C) Oito", "D) Nove"), "resposta": 'B', "valor_acertar": 20000, "valor_parar": 10000, "valor_errar": 5000},
 
     {"pergunta": "Qual é a capital dos Estados Unidos?",
-     "opcoes": ("1) Nova York", "2) Miami", "3) Chicago", "4) Washington"), "resposta": 4, "valor_acertar": 30000, "valor_parar": 20000, "valor_errar": 10000},
+     "opcoes": ("A) Nova York", "B) Miami", "C) Chicago", "D) Washington"), "resposta": 'D', "valor_acertar": 30000, "valor_parar": 20000, "valor_errar": 10000},
 
     {"pergunta": "O que é um croissant??",
-     "opcoes": ("1) Licor", "2) Doce", "3) Tempero", "4) Pão"), "resposta": 4, "valor_acertar": 40000, "valor_parar": 30000, "valor_errar": 15000},
+     "opcoes": ("A) Licor", "B) Doce", "C) Tempero", "D) Pão"), "resposta": 'D', "valor_acertar": 40000, "valor_parar": 30000, "valor_errar": 15000},
 
     {"pergunta": "Quantos anos tem um milênio??",
-     "opcoes": ("1) 100", "2) 500", "3) 1.000", "4) 10.000"), "resposta": 4, "valor_acertar": 50000, "valor_parar": 40000, "valor_errar": 20000},
+     "opcoes": ("A) 100", "B) 500", "C) 1.000", "D) 10.000"), "resposta": 'D', "valor_acertar": 50000, "valor_parar": 40000, "valor_errar": 20000},
 
     {"pergunta": "Um por todos e todos por um, é o grito de qual destes grupos? ",
-     "opcoes": ("1) Extraterrestres", "2) Família Robinson", "3) Power Rangers", "4) Três Mosqueteiros"), "resposta": 4, "valor_acertar": 100000, "valor_parar": 50000, "valor_errar": 25000},
+     "opcoes": ("A) Extraterrestres", "B) Família Robinson", "C) Power Rangers", "D) Três Mosqueteiros"), "resposta": 'D', "valor_acertar": 100000, "valor_parar": 50000, "valor_errar": 25000},
 
     {"pergunta": "Qual destes órgãos não faz parte do sistema digestivo?",
-     "opcoes": ("1) Brônquios", "2) Boca", "3) Faringe", "4) Intestino"), "resposta": 1, "valor_acertar": 200000, "valor_parar": 100000, "valor_errar": 50000},
+     "opcoes": ("A) Brônquios", "B) Boca", "C) Faringe", "D) Intestino"), "resposta": 'A', "valor_acertar": 200000, "valor_parar": 100000, "valor_errar": 50000},
 
     {"pergunta": "Nas religiões afro-brasileiras, quem é o Deus da Guerra??",
-     "opcoes": ("1) Tupã", "2) OGum", "3) Senhor do Bonfim", "4) Zeus"), "resposta": 2, "valor_acertar": 300000, "valor_parar": 200000, "valor_errar": 100000},
+     "opcoes": ("A) Tupã", "B) OGum", "C) Senhor do Bonfim", "D) Zeus"), "resposta": 'B', "valor_acertar": 300000, "valor_parar": 200000, "valor_errar": 100000},
 
     {"pergunta": "O que é andrômeda?",
-     "opcoes": ("1) Bactéria", "2) Verdura", "3) Constelação", "4) Doença"), "resposta": 3, "valor_acertar": 400000, "valor_parar": 300000, "valor_errar": 150000},
+     "opcoes": ("A) Bactéria", "B) Verdura", "C) Constelação", "D) Doença"), "resposta": 'C', "valor_acertar": 400000, "valor_parar": 300000, "valor_errar": 150000},
 
     {"pergunta": "Quem fundou a Microsoft?",
-     "opcoes": ("1) Sultão de Brunei", "2) Akio Morita", "3) Bill Gates", "4) Princípe Charles"), "resposta": 3, "valor_acertar": 500000, "valor_parar": 400000, "valor_errar": 200000},
+     "opcoes": ("A) Sultão de Brunei", "B) Steve Jobs", "C) Bill Gates", "D) Princípe Charles"), "resposta": 'C', "valor_acertar": 500000, "valor_parar": 400000, "valor_errar": 200000},
 
     {"pergunta": "A pergunta do milhão: \nQual destes instrumentos musicais não possui teclado? ",
-     "opcoes": ("1) Espineta", "2) Clavicórdio", "3) Eufônio", "4) Cravo"), "resposta": 3, "valor_acertar": 1000000, "valor_parar": 500000}
+     "opcoes": ("A) Espineta", "B) Clavicórdio", "C) Eufônio", "D) Cravo"), "resposta": 'C', "valor_acertar": 1000000, "valor_parar": 500000}
 )

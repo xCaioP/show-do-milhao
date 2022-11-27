@@ -1,7 +1,6 @@
 """
 Desenvolvido por Caio Ponte
 
-
 """
 
 import functions
@@ -17,29 +16,30 @@ for indice, dado in enumerate(functions.dados):
         functions.mostrar_valor_proxima_pergunta(dado["valor_acertar"])
         deseja_continuar = ""
 
-        while(deseja_continuar.upper() != "S" and deseja_continuar.upper() != "N"):
-            deseja_continuar = input("\nDeseja continuar? [S/N] ")
-        
+        while (deseja_continuar.upper() != "S" and deseja_continuar.upper() != "N"):
+            deseja_continuar = input(
+                '\nDeseja continuar?\n\nS para SIM - N para NÃO:  ')
         functions.limpar_tela()
     else:
         deseja_continuar = "S"
-    
+
     if deseja_continuar.upper() == "S":
         functions.colocar_linha()
-        functions.mostrar_valor_pergunta(dado["valor_acertar"]) 
+        functions.mostrar_valor_pergunta(dado["valor_acertar"])
         functions.colocar_linha()
         functions.contador_perguntas(indice + 1)
         print(dado["pergunta"], "\n")
-        
+
         for opcao in dado["opcoes"]:
             print(opcao)
-        
-        resposta_jogador = 0    
 
-        while(resposta_jogador != "1" and resposta_jogador != "2" and resposta_jogador != "3" and resposta_jogador != "4"):
-            resposta_jogador = input("\nEscolha uma opção [1,2,3,4]: ")
+        resposta_jogador = 0
 
-        resposta_jogador = int(resposta_jogador)
+        while (resposta_jogador != "A" and resposta_jogador != "B" and resposta_jogador != "C" and resposta_jogador != "D"):
+            resposta_jogador = input(
+                "\nEscolha uma opção [A, B, C, D]: ") .upper()
+
+        resposta_jogador = str(resposta_jogador)
 
         if resposta_jogador == dado["resposta"]:
             functions.colocar_linha()
@@ -54,17 +54,19 @@ for indice, dado in enumerate(functions.dados):
             print("\n\033[31mQue pena! Você errou!\033[0;0m")
             print("O jogo acabou,", functions.nome_jogador)
             functions.mostrar_valor_ao_terminar_jogo(saldo_jogador)
-            
+
             break
     else:
         print("Jogo finalizado,", functions.nome_jogador)
         functions.mostrar_valor_ao_terminar_jogo(dado["valor_parar"])
 
         break
-    
+
 if saldo_jogador == 1000000:
-    print("\033[1;93m**********************************************************************")
+    print(
+        "\033[1;93m**********************************************************************")
     print("Você venceu o jogo!")
     print("VOCÊ GANHOU 1 MILHÃO DE REAIS")
-    print("Parabéns,",functions.nome_jogador, "você conseguiu prêmio máximo!!!")
+    print("Parabéns,", functions.nome_jogador,
+          "você conseguiu prêmio máximo!!!")
     print("**********************************************************************")
