@@ -82,12 +82,12 @@ def explicacao():
     :return:None
     """
     print("\nUm resumo sobre o jogo: \n")
-    print("O jogo consiste em três rodadas e uma pergunta final: ")     
+    print("O jogo consiste em três rodadas e uma pergunta final: ")
     print("* A primeira contém 5 perguntas, cada uma valendo mil reais cumulativos. ")
     print("* A segunda, de 5 perguntas valendo R$ 10 mil cumulativos cada. ")
     print("* A terceira, de 5 perguntas de R$100 mil reais cumulativos cada. ")
     print("* A última pergunta vale R$ 1 milhão.", "\n")
-    global nome_jogador 
+    global nome_jogador
     nome_jogador = input("Digite seu nome para começar: ")
     limpar_tela()
 
@@ -106,47 +106,47 @@ dados = (
      "opcoes": ("1) Cuca ", "2) Curupira", "3) Boitatá", "4) Saci-pererê"), "resposta": 4, "valor_acertar": 1000},
 
     {"pergunta": "Qual animal da fauna brasileira está retratado na nota de dez reais?",
-    "opcoes": ("1) Jabuti", "2) Onça", "3) Arara", "4) Tucano"), "resposta": 3, "valor_acertar": 2000, "valor_parar": 1000,"valor_errar": 500},
+     "opcoes": ("1) Jabuti", "2) Onça", "3) Arara", "4) Tucano"), "resposta": 3, "valor_acertar": 2000, "valor_parar": 1000, "valor_errar": 500},
 
     {"pergunta": "Qual a matéria-prima do ketchup?",
-    "opcoes": ("1) Abacate", "2) Tomate", "3) Cereja", "4) Pessego"), "resposta": 2, "valor_acertar": 3000,"valor_parar": 2000,"valor_errar": 1000},
+     "opcoes": ("1) Abacate", "2) Tomate", "3) Cereja", "4) Pessego"), "resposta": 2, "valor_acertar": 3000, "valor_parar": 2000, "valor_errar": 1000},
 
-    {"pergunta": "Qual é a maior floresta do planeta? ",    
-    "opcoes": ("1) Negra", "2) De Sherwood", "3) Da Tijuca", "4) Amazônica"), "resposta": 4, "valor_acertar": 4000, "valor_parar": 3000, "valor_errar": 1500},
+    {"pergunta": "Qual é a maior floresta do planeta? ",
+     "opcoes": ("1) Negra", "2) De Sherwood", "3) Da Tijuca", "4) Amazônica"), "resposta": 4, "valor_acertar": 4000, "valor_parar": 3000, "valor_errar": 1500},
 
     {"pergunta": "Qual casal foi expulso do Paraíso?",
-    "opcoes": ("1) Sansão e Dalila", "2) José e Maria", "3) Sara e Abraão", "4) Adão e Eva"), "resposta": 4, "valor_acertar": 5000, "valor_parar": 4000, "valor_errar": 2000},
+     "opcoes": ("1) Sansão e Dalila", "2) José e Maria", "3) Sara e Abraão", "4) Adão e Eva"), "resposta": 4, "valor_acertar": 5000, "valor_parar": 4000, "valor_errar": 2000},
 
     {"pergunta": "Qual é o inseto que transmite a doença de Chagas??",
-    "opcoes": ("1) Abelha", "2) Barata", "3) Barbeiro", "4) Pulga"), "resposta": 3, "valor_acertar": 10000, "valor_parar": 5000,"valor_errar": 2500},
+     "opcoes": ("1) Abelha", "2) Barata", "3) Barbeiro", "4) Pulga"), "resposta": 3, "valor_acertar": 10000, "valor_parar": 5000, "valor_errar": 2500},
 
     {"pergunta": "Quantos eram os anões da história “A branca de neve”?",
-    "opcoes": ("1) Seis ", "2) Sete", "3) Oito", "4) Nove"), "resposta": 2, "valor_acertar": 20000, "valor_parar": 10000, "valor_errar": 5000},
+     "opcoes": ("1) Seis ", "2) Sete", "3) Oito", "4) Nove"), "resposta": 2, "valor_acertar": 20000, "valor_parar": 10000, "valor_errar": 5000},
 
     {"pergunta": "Qual é a capital dos Estados Unidos?",
-    "opcoes": ("1) Nova York", "2) Miami", "3) Chicago", "4) Washington"), "resposta": 4, "valor_acertar": 30000, "valor_parar": 20000, "valor_errar": 10000},
+     "opcoes": ("1) Nova York", "2) Miami", "3) Chicago", "4) Washington"), "resposta": 4, "valor_acertar": 30000, "valor_parar": 20000, "valor_errar": 10000},
 
     {"pergunta": "O que é um croissant??",
-    "opcoes": ("1) Licor", "2) Doce", "3) Tempero", "4) Pão"), "resposta": 4, "valor_acertar": 40000, "valor_parar": 30000, "valor_errar":15000},
+     "opcoes": ("1) Licor", "2) Doce", "3) Tempero", "4) Pão"), "resposta": 4, "valor_acertar": 40000, "valor_parar": 30000, "valor_errar": 15000},
 
     {"pergunta": "Quantos anos tem um milênio??",
-    "opcoes": ("1) 100", "2) 500", "3) 1.000", "4) 10.000"), "resposta": 4, "valor_acertar": 50000, "valor_parar": 40000, "valor_errar":20000},
-    
-    {"pergunta": "Um por todos e todos por um, é o grito de qual destes grupos? ", 
-    "opcoes": ("1) Extraterrestres", "2) Família Robinson", "3) Power Rangers", "4) Três Mosqueteiros"),"resposta": 4, "valor_acertar": 100000,"valor_parar": 50000, "valor_errar":25000},
-    
+     "opcoes": ("1) 100", "2) 500", "3) 1.000", "4) 10.000"), "resposta": 4, "valor_acertar": 50000, "valor_parar": 40000, "valor_errar": 20000},
+
+    {"pergunta": "Um por todos e todos por um, é o grito de qual destes grupos? ",
+     "opcoes": ("1) Extraterrestres", "2) Família Robinson", "3) Power Rangers", "4) Três Mosqueteiros"), "resposta": 4, "valor_acertar": 100000, "valor_parar": 50000, "valor_errar": 25000},
+
     {"pergunta": "Qual destes órgãos não faz parte do sistema digestivo?",
-    "opcoes": ("1) Brônquios", "2) Boca", "3) Faringe", "4) Intestino"), "resposta": 1, "valor_acertar": 200000,"valor_parar": 100000, "valor_errar":50000},
-    
+     "opcoes": ("1) Brônquios", "2) Boca", "3) Faringe", "4) Intestino"), "resposta": 1, "valor_acertar": 200000, "valor_parar": 100000, "valor_errar": 50000},
+
     {"pergunta": "Nas religiões afro-brasileiras, quem é o Deus da Guerra??",
-    "opcoes": ("1) Tupã", "2) OGum", "3) Senhor do Bonfim", "4) Zeus"), "resposta": 2, "valor_acertar": 300000,"valor_parar": 200000, "valor_errar":100000},
-    
+     "opcoes": ("1) Tupã", "2) OGum", "3) Senhor do Bonfim", "4) Zeus"), "resposta": 2, "valor_acertar": 300000, "valor_parar": 200000, "valor_errar": 100000},
+
     {"pergunta": "O que é andrômeda?",
-    "opcoes": ("1) Bactéria", "2) Verdura", "3) Constelação", "4) Doença"), "resposta": 3, "valor_acertar": 400000,"valor_parar": 300000, "valor_errar":150000},
-     
+     "opcoes": ("1) Bactéria", "2) Verdura", "3) Constelação", "4) Doença"), "resposta": 3, "valor_acertar": 400000, "valor_parar": 300000, "valor_errar": 150000},
+
     {"pergunta": "Quem fundou a Microsoft?",
-    "opcoes": ("1) Sultão de Brunei", "2) Akio Morita", "3) Bill Gates", "4) Princípe Charles"), "resposta": 3, "valor_acertar": 500000,"valor_parar": 400000, "valor_errar":200000},
-    
+     "opcoes": ("1) Sultão de Brunei", "2) Akio Morita", "3) Bill Gates", "4) Princípe Charles"), "resposta": 3, "valor_acertar": 500000, "valor_parar": 400000, "valor_errar": 200000},
+
     {"pergunta": "A pergunta do milhão: \nQual destes instrumentos musicais não possui teclado? ",
-    "opcoes": ("1) Espineta", "2) Clavicórdio", "3) Eufônio", "4) Cravo"), "resposta": 3, "valor_acertar": 1000000, "valor_parar": 500000}
-    )
+     "opcoes": ("1) Espineta", "2) Clavicórdio", "3) Eufônio", "4) Cravo"), "resposta": 3, "valor_acertar": 1000000, "valor_parar": 500000}
+)
