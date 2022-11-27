@@ -4,6 +4,7 @@ Desenvolvido por Caio Ponte
 """
 
 import functions
+from time import sleep
 
 saldo_jogador = 0
 
@@ -51,7 +52,7 @@ for indice, dado in enumerate(functions.dados):
             else:
                 saldo_jogador = dado["valor_errar"]
 
-            print("\n\033[31mQue pena! Você errou!\033[0;0m")
+            print("\n\033[31mQue pena! Você errou!\033[0;0m\n")
             print("O jogo acabou,", functions.nome_jogador)
             functions.mostrar_valor_ao_terminar_jogo(saldo_jogador)
 
@@ -63,10 +64,9 @@ for indice, dado in enumerate(functions.dados):
         break
 
 if saldo_jogador == 1000000:
-    print(
-        "\033[1;93m**********************************************************************")
-    print("Você venceu o jogo!")
-    print("VOCÊ GANHOU 1 MILHÃO DE REAIS")
-    print("Parabéns,", functions.nome_jogador,
-          "você conseguiu prêmio máximo!!!")
-    print("**********************************************************************")
+    print("\033[1;93m *" * 40)
+    print("VOCÊ VENCEU O JOGO")
+    print("VOCÊ GANHOU 1 MILHÃO DE REAISSSSSSSSSSS")
+    print("PARABÉNS,", functions.nome_jogador,
+          "VOCÊ CONSEGUIU O PRÊMIO MÁXIMO")
+    print("\033[1;93m *" * 40)

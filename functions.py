@@ -23,7 +23,7 @@ def introducao():
 
     """
     colocar_linha()
-    print("\nShow do Milhão")
+    print("Show do Milhão\n")
     print("Seja bem-vindo!", "\n")
     colocar_linha()
     print("\nSerá que você consegue ganhar o prêmio máximo de 1 milhão de REAIS??????")
@@ -75,8 +75,8 @@ def explicacao():
     print("Como funciona o jogo: \n")
     print("O jogo consiste em três rodadas e uma pergunta final: \n")
     print("* A primeira rodada contém 5 perguntas, cada uma valendo R$ 1000 cumulativos. ")
-    print("* A segunda rodada contém 5 perguntas valendo R$ 10 mil cumulativos cada. ")
-    print("* A terceira rodada contém de 5 perguntas de R$ 100 mil reais cumulativos cada. ")
+    print("* A segunda rodada contém 5 perguntas, cada uma valendo R$ 10 mil cumulativos. ")
+    print("* A terceira rodada contém 5 perguntas, cada uma valendo R$ 100 mil reais cumulativos. ")
     print("* A última pergunta vale R$ 1 milhão.", "\n")
     global nome_jogador
     nome_jogador = input("Digite seu nome para começar: ")
@@ -120,7 +120,7 @@ dados = (
      "opcoes": ("A) Licor", "B) Doce", "C) Tempero", "D) Pão"), "resposta": 'D', "valor_acertar": 40000, "valor_parar": 30000, "valor_errar": 15000},
 
     {"pergunta": "Quantos anos tem um milênio??",
-     "opcoes": ("A) 100", "B) 500", "C) 1.000", "D) 10.000"), "resposta": 'D', "valor_acertar": 50000, "valor_parar": 40000, "valor_errar": 20000},
+     "opcoes": ("A) 100", "B) 500", "C) 1.000", "D) 10.000"), "resposta": 'C', "valor_acertar": 50000, "valor_parar": 40000, "valor_errar": 20000},
 
     {"pergunta": "Um por todos e todos por um, é o grito de qual destes grupos? ",
      "opcoes": ("A) Extraterrestres", "B) Família Robinson", "C) Power Rangers", "D) Três Mosqueteiros"), "resposta": 'D', "valor_acertar": 100000, "valor_parar": 50000, "valor_errar": 25000},
