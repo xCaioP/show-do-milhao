@@ -1,1 +1,2 @@
-# show-do-milhao
+# Projeto Python Jogo do Milhão 
+
