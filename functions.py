@@ -2,26 +2,14 @@ import os
 
 
 def limpar_tela():
-    """
-    Essa função limpa a tela no cmd, usando o módulo os.
-
-    """
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def colocar_linha():
-    """
-    Essa função adiciona hífens para ter uma aparência melhor via CMD.
-
-    """
     print("-" * 40)
 
 
 def introducao():
-    """
-    Essa função cria a Tela inicial do jogo, dando uma breve descrição e interagindo com o jogador.
-
-    """
     colocar_linha()
     print("Show do Milhão\n")
     print("Seja bem-vindo!", "\n")
@@ -35,43 +23,24 @@ def introducao():
 
 
 def mostrar_valor_proxima_pergunta(valor_acertar):
-    """
-    Essa função serve para mostrar o valor da proxima pergunta.
-
-    """
-    print('Proxima pergunta valerá: {} reais\n' .format(valor_acertar))
+    print('Proxima pergunta vale: {} reais\n' .format(valor_acertar))
     colocar_linha()
 
 
 def mostrar_valor_parar(valor_parar):
-    """
-    Essa função serve para mostrar o valor caso o jogador queira parar, e a cada pergunta esse valor muda ou altera.
-
-    """
     colocar_linha()
     print("\nParar: {} reais" .format(valor_parar))
 
 
 def mostrar_valor_pergunta(valor_acertar):
-    """
-    Essa função mostra ao jogador o valor da pergunta atual.
-    """
     print("Essa pergunta vale: {} reais ".format(valor_acertar))
 
 
 def mostrar_valor_ao_terminar_jogo(valor_final):
-    """
-    Essa função mostra o valor final recebido pelo jogador.
-
-    """
     print('\nVocê recebeu {} reais \n' .format(valor_final))
 
 
 def explicacao():
-    """
-    Essa função explica como o jogo funciona.
-
-    """
     print("Como funciona o jogo: \n")
     print("O jogo consiste em três rodadas e uma pergunta final: \n")
     print("* A primeira rodada contém 5 perguntas, cada uma valendo R$ 1000 cumulativos. ")
@@ -84,11 +53,6 @@ def explicacao():
 
 
 def contador_perguntas(numero_pergunta):
-    """
-    Essa função mostra a contagem de perguntas para o jogador.
-
-    """
-    '''print("Pergunta: ", numero_pergunta, "", len(dados), "\n")'''
     print("Pergunta: {} de {} \n" .format(numero_pergunta, len(dados)))
 
 
