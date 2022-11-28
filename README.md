@@ -1,2 +1,2 @@
-# Projeto Python Jogo do Milhão 
+# Projeto Jogo do Milhão em Python
 
