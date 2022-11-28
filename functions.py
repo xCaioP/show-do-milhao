@@ -88,7 +88,8 @@ def contador_perguntas(numero_pergunta):
     Essa função mostra a contagem de perguntas para o jogador.
 
     """
-    print("Pergunta: ", numero_pergunta, "/", len(dados), "\n")
+    '''print("Pergunta: ", numero_pergunta, "", len(dados), "\n")'''
+    print("Pergunta: {} de {} \n" .format(numero_pergunta, len(dados)))
 
 
 dados = (
@@ -102,7 +103,7 @@ dados = (
      "opcoes": ("A) Abacate", "B) Tomate", "C) Cereja", "D) Pessego"), "resposta": 'B', "valor_acertar": 3000, "valor_parar": 2000, "valor_errar": 1000},
 
     {"pergunta": "Qual é a maior floresta do planeta? ",
-     "opcoes": ("A) Negra", "B) De Sherwood", "C) Da Tijuca", "D) Amazônica"), "resposta": 'D', "valor_acertar": 4000, "valor_parar": 3000, "valor_errar": 1500},
+     "opcoes": ("A) Amazônica", "B) De Sherwood", "C) Da Tijuca", "D) Negra"), "resposta": 'A', "valor_acertar": 4000, "valor_parar": 3000, "valor_errar": 1500},
 
     {"pergunta": "Qual casal foi expulso do Paraíso?",
      "opcoes": ("A) Sansão e Dalila", "B) José e Maria", "C) Sara e Abraão", "D) Adão e Eva"), "resposta": 'D', "valor_acertar": 5000, "valor_parar": 4000, "valor_errar": 2000},

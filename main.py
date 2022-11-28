@@ -4,7 +4,6 @@ Desenvolvido por Caio Ponte
 """
 
 import functions
-from time import sleep
 
 saldo_jogador = 0
 
@@ -37,10 +36,8 @@ for indice, dado in enumerate(functions.dados):
         resposta_jogador = 0
 
         while (resposta_jogador != "A" and resposta_jogador != "B" and resposta_jogador != "C" and resposta_jogador != "D"):
-            resposta_jogador = input(
-                "\nEscolha uma opção [A, B, C, D]: ") .upper()
-
-        resposta_jogador = str(resposta_jogador)
+            resposta_jogador = str(
+                input('\nEscolha uma opção [A, B, C, D]: ')) .upper()
 
         if resposta_jogador == dado["resposta"]:
             functions.colocar_linha()
