@@ -18,7 +18,7 @@ for indice, dado in enumerate(functions.dados):
 
         while (deseja_continuar.upper() != "S" and deseja_continuar.upper() != "N"):
             deseja_continuar = input(
-                '\nDeseja continuar?\n\nS para SIM - N para NÃO:  ')
+                '\nDeseja continuar?\n\nS para SIM - N para NÃO:  \n o Saldo atual é de {}'.format(saldo_jogador))
         functions.limpar_tela()
     else:
         deseja_continuar = "S"
@@ -35,14 +35,14 @@ for indice, dado in enumerate(functions.dados):
 
         resposta_jogador = 0
 
-        while (resposta_jogador != "A" and resposta_jogador != "B" and resposta_jogador != "C" and resposta_jogador != "D"):
-            resposta_jogador = str(
-                input('\nEscolha uma opção [A, B, C, D]: ')) .upper()
+        while (resposta_jogador != 1 and resposta_jogador != 2 and resposta_jogador != 3 and resposta_jogador != 4):
+            resposta_jogador = int(
+                input('\nQual alternativa correta? \n1, 2, 3 ou 4? \n'))
 
         if resposta_jogador == dado["resposta"]:
             functions.colocar_linha()
             print("\n\033[32mCerta Reposta!!! \033[0;0m\n")
-            saldo_jogador = dado["valor_acertar"]
+            saldo_jogador = dado["valor_acertar"] + saldo_jogador
         else:
             if "valor_errar" not in dado:
                 saldo_jogador = 0
